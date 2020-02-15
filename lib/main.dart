@@ -51,8 +51,15 @@ class _MyFormPageState extends State<MyFormPage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.mail),
-        onPressed: () {},
+        onPressed: () => showSnackBar(context),
       ),
     );
   }
+
+  showSnackBar(context){
+    final snackBar = SnackBar(content: Text("This is a snackbar"));
+    Scaffold.of(context).showSnackBar(snackBar);
+  }
 }
+
+
