@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_part2/detail.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
@@ -58,7 +59,9 @@ class _MyFormPageState extends State<MyFormPage> {
               ),
               FlatButton(
                 child: Text("Open NEw Page"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
+                },
               ),
             ],
           ),
