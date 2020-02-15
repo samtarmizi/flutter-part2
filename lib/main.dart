@@ -33,6 +33,11 @@ class MyFormPage extends StatefulWidget {
 }
 
 class _MyFormPageState extends State<MyFormPage> {
+
+  final namecontroller = TextEditingController();
+  final emailcontroller = TextEditingController();
+  final phonecontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,16 +56,22 @@ class _MyFormPageState extends State<MyFormPage> {
               Image.network(
                   "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg"),
               TextField(
-                  decoration: InputDecoration(labelText: 'Enter your name')),
+                  decoration: InputDecoration(labelText: 'Enter your name'),
+                  controller: namecontroller,
+                  ),
               TextField(
-                  decoration: InputDecoration(labelText: 'Enter your email')),
+                  decoration: InputDecoration(labelText: 'Enter your email'),
+                  controller: emailcontroller,
+                  ),
               TextField(
                 decoration: InputDecoration(labelText: 'Enter phone number'),
+                controller: phonecontroller,
               ),
               FlatButton(
                 child: Text("Open NEw Page"),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
+                  print("Name: ${namecontroller.text} Email: ${emailcontroller.text} Phone: ${phonecontroller.text}");
                 },
               ),
             ],
