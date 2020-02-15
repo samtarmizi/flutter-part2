@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +41,10 @@ class _MyFormPageState extends State<MyFormPage> {
       body: Container(
         child: Column(
           children: <Widget>[
-            Text("Form app"),
+            Text("Form app", style: GoogleFonts.karla(
+              fontSize: 32,
+              color: Colors.green
+            ),),
             Image.network("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg")
           ],
         ),
