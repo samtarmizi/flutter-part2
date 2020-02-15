@@ -39,24 +39,31 @@ class _MyFormPageState extends State<MyFormPage> {
         title: Text("My Form"),
       ),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Text(
-              "Form app",
-              style: GoogleFonts.karla(fontSize: 32, color: Colors.green),
-            ),
-            Image.network(
-                "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg"),
-            TextField(
-                decoration: InputDecoration(labelText: 'Enter your name')),
-            TextField(
-                decoration: InputDecoration(labelText: 'Enter your email')),
-            TextField(
-              decoration: InputDecoration(labelText: 'Enter phone number'),
-            )
-          ],
+          child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text(
+                "Form app",
+                style: GoogleFonts.karla(fontSize: 32, color: Colors.green),
+              ),
+              Image.network(
+                  "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg"),
+              TextField(
+                  decoration: InputDecoration(labelText: 'Enter your name')),
+              TextField(
+                  decoration: InputDecoration(labelText: 'Enter your email')),
+              TextField(
+                decoration: InputDecoration(labelText: 'Enter phone number'),
+              ),
+              FlatButton(
+                child: Text("Open NEw Page"),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
-      ),
+      )),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.mail),
         onPressed: () => showSnackBar(context),
