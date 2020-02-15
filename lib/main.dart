@@ -69,7 +69,6 @@ class _MyFormPageState extends State<MyFormPage> {
               FlatButton(
                 child: Text("Open NEw Page"),
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
                   showAlertDialog();
                 },
               ),
@@ -92,18 +91,25 @@ class _MyFormPageState extends State<MyFormPage> {
               title: new Text("Are you sure want to send the info"),
               actions: <Widget>[
                 new FlatButton(
-                  child: new Text('Cancel'),
-                  onPressed: (){
-                    print("Cancel is pressed");
-                    Navigator.pop(context);
-                  } 
-                ),
+                    child: new Text('Cancel'),
+                    onPressed: () {
+                      print("Cancel is pressed");
+                      Navigator.pop(context);
+                    }),
                 new FlatButton(
                   child: new Text('Okay!'),
                   onPressed: () {
                     print("Okay is pressed");
                     print(
                         "Name: ${namecontroller.text} Email: ${emailcontroller.text} Phone: ${phonecontroller.text}");
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailPage(
+                                namecontroller.text,
+                                emailcontroller.text,
+                                phonecontroller.text)));
                   },
                 )
               ]);

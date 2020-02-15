@@ -6,7 +6,7 @@ class DetailPage extends StatefulWidget {
   final String email;
   final String phone;
 
-  const DetailPage({Key key, this.name, this.email, this.phone}) : super(key: key);
+  const DetailPage(this.name, this.email, this.phone);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -20,7 +20,16 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         title: Text("Detail Page")
       ),
-      body: Container(child: Text("This is second page"),),
+      body: Container(
+        // child: Text("This is second page"),
+        child: Column(
+          children: <Widget>[
+            Text('${widget.name}'),
+            Text('${widget.phone}'),
+            Text('${widget.email}')
+          ],
+        )
+      ),
     );
   }
 }
